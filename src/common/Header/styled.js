@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
-  background: ${({theme})=> theme.colors.darkBlueButton};
+  background: ${({ theme }) => theme.colors.darkBlueButton};
   height: 40px;
 `;
 
@@ -20,9 +20,17 @@ export const Item = styled.li`
   margin: 0px 20px;
 `;
 
-
 export const Link = styled(NavLink)`
-  color: ${({theme})=> theme.colors.white};
+  color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
+  transition: color .3s;
+
+  &.active{
+    color: ${({ theme }) => theme.colors.coral};
+  }
+
+  &:hover{
+    color: ${({ theme }) => theme.colors.coral};
+  }
 `;
 
