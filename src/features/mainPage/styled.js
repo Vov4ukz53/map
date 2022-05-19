@@ -13,7 +13,7 @@ export const Title = styled.h1`
 `;
 
 export const Link = styled(NavLink)`
-  background: ${({ theme }) => theme.colors.darkBlueButton};
+  background: ${({ theme }) => theme.colors.crayola};
   color: ${({ theme }) => theme.colors.white};
   border: none;
   padding: 10px 0px;
@@ -24,4 +24,9 @@ export const Link = styled(NavLink)`
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  transition: background .3s;
+
+  &:hover{
+    background: ${({ theme }) => theme.colors.celtikBlue};
+  }
 `;
