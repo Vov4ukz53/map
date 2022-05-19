@@ -1,25 +1,33 @@
-import { useSelector } from "react-redux";
+import { useRef } from "react";
+import { PDFExport} from "@progress/kendo-react-pdf";
 import { Container } from "../../common/Container";
 import { TileLayer } from "react-leaflet";
-import { MyMap } from "./styled";
-import { selectMap, selectMap2 } from "../mapSlice";
-import "leaflet/dist/leaflet.css";
 import { RoutingMachine } from "./RoutingMachine";
+import { coordStart } from "./coordStart";
+import { MyMap, Button } from "./styled";
+import { RouteInfo } from "./RouteInfo";
+import "leaflet/dist/leaflet.css";
 
 export const MapPage = () => {
-  // const { position } = useSelector(selectMap);
-  // const map2 = useSelector(selectMap2);
-  const coord = [51.12339388765598, 17.004908669261074];
+  const pdfExportComponent = useRef(null);
+
+  const handleExport = () => {
+    pdfExportComponent.current.save();
+  }
 
   return (
     <Container>
-      <MyMap center={coord} zoom={13}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <RoutingMachine />
-      </MyMap>
+      <PDFExport ref={pdfExportComponent} papaeSize="A4">
+        <MyMap center={coordStart} zoom={10}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <RoutingMachine />
+        </MyMap>
+        <RouteInfo />
+      </PDFExport>
+      <Button onClick={handleExport}>Save to pdf</Button>
     </Container>
   )
 };
