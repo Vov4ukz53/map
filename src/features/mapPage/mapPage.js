@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { PDFExport} from "@progress/kendo-react-pdf";
+import { PDFExport } from "@progress/kendo-react-pdf";
 import { Container } from "../../common/Container";
 import { TileLayer } from "react-leaflet";
 import { RoutingMachine } from "./RoutingMachine";
@@ -13,7 +13,7 @@ export const MapPage = () => {
 
   const handleExport = () => {
     pdfExportComponent.current.save();
-  }
+  };
 
   return (
     <Container>

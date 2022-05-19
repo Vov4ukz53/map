@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "./common/Header";
 import { MainPage } from "./features/mainPage/MainPage";
-import {MapPage} from "./features/mapPage/mapPage";
+import { MapPage } from "./features/mapPage/mapPage";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Navigate to="/main" />} />
       </Routes>
     </HashRouter>
-  );
-}
+  )
+};
 
 export default App;

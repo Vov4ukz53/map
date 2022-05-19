@@ -13,7 +13,7 @@ export const StyledForm = styled.form`
 export const Input = styled.input`
   padding: 10px;
   margin: 0px;
-  border: 1px solid ${({theme})=> theme.colors.crayola};
+  border: 1px solid ${({ theme }) => theme.colors.crayola};
 
   &:not(:last-child){
     margin: 0px 0px 15px 0px;

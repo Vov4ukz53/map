@@ -6,7 +6,7 @@ export const MyMap = styled(MapContainer)`
   height: 600px;
   width: 100%;
 
-  @media(max-width: ${({theme})=> theme.breakpoints.mobile}){
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobile}){
     height: 400px;
   }
 `;
