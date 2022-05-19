@@ -10,6 +10,7 @@ export const Wrapper = styled.section`
 
 export const Title = styled.h1`
   margin: 0px 0px 30px 0px;
+  text-align: center;
 `;
 
 export const Link = styled(NavLink)`

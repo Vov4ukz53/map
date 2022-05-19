@@ -6,6 +6,7 @@ const mapSlice = createSlice({
     addressStart: [],
     addressEnd: [],
     routeInfo: [],
+    history: [],
     loading: false,
     error: false
   },
@@ -30,6 +31,9 @@ const mapSlice = createSlice({
       state.error = true;
       state.loading = false;
     },
+    addHistory: ({ history }, { payload: newHistory }) => {
+      history.push(newHistory);
+    },
   },
 });
 
@@ -39,6 +43,7 @@ export const {
   fetchAddressEndSuccess,
   fetchRouteInfoSuccess,
   fetchMapError,
+  addHistory
 } = mapSlice.actions;
 
 const selectMapState = state => state.map;
@@ -48,5 +53,6 @@ export const selectAddressEnd = state => selectMapState(state).addressEnd;
 export const selectLoading = state => selectMapState(state).loading;
 export const selectError = state => selectMapState(state).error;
 export const selectorRouteInfo = state => selectMapState(state).routeInfo;
+export const selectHistory = state => selectMapState(state).history;
 
 export default mapSlice.reducer;
