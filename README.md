@@ -18,7 +18,7 @@ Here you can see my [demo](https://vov4ukz53.github.io/map/)
 - Styled Components
 
 ### How to use
-![how to use]()
+![how to use](https://i.ibb.co/vhcGNsy/map.gif)
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
