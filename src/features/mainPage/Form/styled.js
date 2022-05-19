@@ -7,17 +7,15 @@ export const StyledForm = styled.form`
   background: ${({ theme }) => theme.colors.white};
   border-radius: 5px;
   text-align: center;
+  margin-bottom: 20px;
 `;
 
 export const Input = styled.input`
   padding: 10px;
-  margin: 15px 0px;
-`;
+  margin: 0px;
+  border: 1px solid ${({theme})=> theme.colors.darkBlueButton};
 
-export const Button = styled.button`
-  background: ${({ theme }) => theme.colors.darkBlueButton};
-  color: ${({ theme }) => theme.colors.white};
-  border: none;
-  padding: 10px 0px;
+  &:not(:last-child){
+    margin: 0px 0px 15px 0px;
+  }
 `;
-
