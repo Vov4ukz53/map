@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const mapSlice = createSlice({
   name: 'map',
   initialState: {
-    map: [],
-    map2: [],
+    addressStart: [],
+    addressEnd: [],
     loading: false,
     error: false
   },
@@ -13,12 +13,12 @@ const mapSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
-    fetchMapSuccess: (state, { payload: mapInfo }) => {
-      state.map = mapInfo;
+    fetchAddressStartSuccess: (state, { payload: mapInfo }) => {
+      state.addressStart = mapInfo;
       state.loading = false;
     },
-    fetchMap2Success: (state, { payload: mapInfo }) => {
-      state.map2 = mapInfo;
+    fetchAddressEndSuccess: (state, { payload: mapInfo }) => {
+      state.addressEnd = mapInfo;
       state.loading = false;
     },
     fetchMapError: (state) => {
@@ -30,15 +30,15 @@ const mapSlice = createSlice({
 
 export const {
   fetchMap,
-  fetchMapSuccess,
-  fetchMap2Success,
+  fetchAddressStartSuccess,
+  fetchAddressEndSuccess,
   fetchMapError,
 } = mapSlice.actions;
 
 const selectMapState = state => state.map;
 
-export const selectMap = state => selectMapState(state).map;
-export const selectMap2 = state => selectMapState(state).map2;
+export const selectAddressStart = state => selectMapState(state).addressStart;
+export const selectAddressEnd = state => selectMapState(state).addressEnd;
 export const selectLoading = state => selectMapState(state).loading;
 export const selectError = state => selectMapState(state).error;
 
