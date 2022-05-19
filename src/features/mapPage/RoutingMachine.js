@@ -25,7 +25,7 @@ export const RoutingMachine = () => {
       ],
       show: false,
     }).addTo(map);
-  }, [map]);
+  }, [map, position, addressEnd]);
 
   return null;
 };

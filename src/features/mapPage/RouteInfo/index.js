@@ -5,7 +5,7 @@ import { Wrapper, Paragraph, Div, Input } from "./styled";
 
 export const RouteInfo = () => {
   const { lengthInMeters } = useSelector(selectorRouteInfo);
-  const addressStart = useSelector(selectAddressStart);
+  const { address } = useSelector(selectAddressStart);
   const addressEnd = useSelector(selectAddressEnd);
   const distance = (lengthInMeters / 1000).toFixed(2);
   const [pricePerKm, setPricePerKm] = useState(2);
@@ -17,7 +17,7 @@ export const RouteInfo = () => {
   return (
     <Wrapper>
       <Paragraph>
-        From: {addressStart.length > 0 ? addressStart.address.freeformAddress : ""}
+        From:  {address ? address.freeformAddress : ""}
       </Paragraph>
       <Paragraph>
         To: {addressEnd.length > 0 ? addressEnd[0].address.freeformAddress : ""}
