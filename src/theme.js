@@ -6,6 +6,8 @@ export const theme = {
     celtikBlue: "#2464e4",
     red: "#FF0000",
     coral: "#FF7F50",
+    green: "#008000",
+    lightGreen: "#079007",
   },
   breakpoints: {
     mobile: "767px",
