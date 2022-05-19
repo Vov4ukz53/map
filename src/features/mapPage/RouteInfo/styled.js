@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   margin: 30px 0px 50px 0px;
+
+  @media(max-width: ${({theme})=> theme.breakpoints.mobile}){
+    margin: 20px 0px 30px 0px;
+  }
 `;
 
 export const Div = styled.div`
