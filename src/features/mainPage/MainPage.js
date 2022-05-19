@@ -1,26 +1,33 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useQueryParameter } from "../queryParameters";
+import { fetchMap } from "../mapSlice";
 import { Container } from "../../common/Container";
+import { Form } from "./Form";
 import {
   Wrapper,
-  Form,
-  Input,
-  Button,
-  Title
+  Title,
+  Link
 } from "./styled";
-import { getApi } from "../../getApi";
 
 export const MainPage = () => {
-  const url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=Wroclaw+Gradowa+8";
-  console.log(getApi(url));
+  const dispatch = useDispatch();
+  const query = useQueryParameter("search");
+  const query1 = useQueryParameter("search1");
+
+  useEffect(() => {
+    query !== null && query1 !== null &&
+      dispatch(fetchMap({ query, query1 }));
+  }, [dispatch, query, query1]);
 
   return (
     <Wrapper>
       <Container>
         <Title>Main Title</Title>
-        <Form>
-          <Input type="text" name="start" placeholder="Origin" />
-          <Input type="text" name="end" placeholder="Destination" />
-          <Button>Calculate Route</Button>
-        </Form>
+        <Form />
+        {query && query1 &&
+          <Link to="/map">Show result</Link>
+        }
       </Container>
     </Wrapper>
   )
