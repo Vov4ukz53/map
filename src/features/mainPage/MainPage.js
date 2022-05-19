@@ -25,7 +25,7 @@ export const MainPage = () => {
   return (
     <Wrapper>
       <Container>
-        <Title>Main Title</Title>
+        <Title>Сhoose a trip</Title>
         <Form />
         {error ? <Error />
           : query && query1 && !error &&
