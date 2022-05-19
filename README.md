@@ -1,5 +1,5 @@
 # Map
-Web site were you can select a trip and view information about it
+Web site were you can select a trip and view information about it.
 
 ## Demo
 Here you can see my [demo](https://vov4ukz53.github.io/map/)
