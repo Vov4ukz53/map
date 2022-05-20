@@ -1,5 +1,5 @@
 import debounce from "lodash.debounce";
-import { useReplaceQueryParameter } from "../../queryParameters";
+import { useReplaceQueryParameter } from "../queryParameters";
 import { StyledForm, Input } from "./styled";
 
 export const Form = () => {

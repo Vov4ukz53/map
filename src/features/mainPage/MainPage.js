@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useQueryParameter } from "../queryParameters";
+import { useQueryParameter } from "./queryParameters";
 import { fetchMap, selectError } from "../mapSlice";
 import { Container } from "../../common/Container";
 import { Form } from "./Form";
