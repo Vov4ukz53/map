@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { Wrapper, List, Item, Paragraph, Button } from "./styled";
 import { useSelector } from "react-redux";
 import { selectHistory } from "../../mapSlice";
+import {
+  Wrapper,
+  List,
+  Item,
+  Paragraph,
+  Button,
+  Title
+} from "./styled";
 
 export const History = () => {
   const [hide, setHide] = useState(false);
@@ -9,23 +16,23 @@ export const History = () => {
 
   return (
     <>
-      <Button
+      <Button disabled={!history.length}
         onClick={() => setHide(!hide)}
       >
         {!hide ? "history show" : "history hide"}
       </Button>
       {
         hide && <Wrapper>
-          <h2>History</h2>
-          {history.map((item, index) => (
-            <List key={index}>
-              <Item>
+          <Title>History</Title>
+          <List >
+            {history.map((item, index) => (
+              <Item key={index}>
                 <Paragraph>From: {item.addressStart}</Paragraph>
                 <Paragraph>To: {item.addressEnd}</Paragraph>
                 <Paragraph>Distance: {item.distance}</Paragraph>
               </Item>
-            </List>
-          ))}
+            ))}
+          </List>
         </Wrapper>
       }
     </>

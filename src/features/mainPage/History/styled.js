@@ -7,8 +7,13 @@ export const Wrapper = styled.section`
   border-radius: 5px;
 `;
 
+export const Title = styled.h2`
+  margin: 0px 0px 20px 0px;
+`;
+
 export const List = styled.ul`
   padding: 0px;
+  margin: 0px;
 `;
 
 export const Item = styled.li`
@@ -36,6 +41,15 @@ export const Button = styled.button`
   background: ${({ theme }) => theme.colors.green};
   cursor: pointer;
   transition: background .3s;
+
+  &:disabled{
+    background: ${({ theme }) => theme.colors.grey};
+    cursor: default;
+
+    &:hover{
+      background: ${({ theme }) => theme.colors.grey};
+    }
+  }
 
   &:hover{
     background: ${({ theme }) => theme.colors.lightGreen};
