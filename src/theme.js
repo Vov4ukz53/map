@@ -8,6 +8,7 @@ export const theme = {
     coral: "#FF7F50",
     green: "#008000",
     lightGreen: "#079007",
+    grey: "#808080"
   },
   breakpoints: {
     mobile: "767px",
