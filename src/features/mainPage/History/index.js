@@ -19,7 +19,7 @@ export const History = () => {
       <Button disabled={!history.length}
         onClick={() => setHide(!hide)}
       >
-        {!hide ? "history show" : "history hide"}
+        {!hide ? "History show" : "History hide"}
       </Button>
       {
         hide && <Wrapper>
